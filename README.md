@@ -17,9 +17,9 @@ version, we support several possibilities for the key autodetection:
 
   * Autodetecting from the query. You should provide the name of the columns used for partitioning in the
     connection string (i.e. jdbc:splout://localhost:4412?key='country_code'&tablespace='city_pby_country_code').
-    The driver will autodetect the key in simple queries like that: select * from city where country_code = 'AFG';
+    The driver will autodetect the key in simple queries like that: <pre>select * from city where country_code = 'AFG';</pre>
   * An explicit key can be provided by prepending the query with "key=<key>;". For example, the following 
-    query uses explicit key submission: key=AFG; select * from city where country_code = cCode("Afganistan");
+    query uses explicit key submission: <pre>key=AFG; select * from city where country_code = cCode("Afganistan");</pre>
     
 A particular tablespace must be also provided in the connection string. 
 
@@ -39,7 +39,7 @@ The current implementation is very simple and not complete. Particulary, it has 
     
 Example of usage:
 ----------------
-'''
+<pre>
     Class driver = Class.forName("com.splout.db.jdbc.SimpleSploutJDBCDriver");
     Connection conn = DriverManager.getConnection("jdbc:splout://localhost:4412?key='country_code'&tablespace='city_pby_country_code'");
     Statement stmt = conn.createStatement();
@@ -52,6 +52,6 @@ Example of usage:
     }
     stmt.close();
     conn.close();
-'''
+</pre>
 
 
