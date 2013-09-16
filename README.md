@@ -18,7 +18,7 @@ version, we support several possibilities for the key autodetection:
   * Autodetecting from the query. You should provide the name of the columns used for partitioning in the
     connection string (i.e. jdbc:splout://localhost:4412?key='country_code'&tablespace='city_pby_country_code').
     The driver will autodetect the key in simple queries like that: <pre>select * from city where country_code = 'AFG';</pre>
-  * An explicit key can be provided by prepending the query with "key=<key>;". For example, the following 
+  * An explicit key can be provided by prepending the query with "key=yourKey;". For example, the following 
     query uses explicit key submission: <pre>key=AFG; select * from city where country_code = cCode("Afganistan");</pre>
     
 A particular tablespace must be also provided in the connection string. 
@@ -33,7 +33,7 @@ The current implementation is very simple and not complete. Particulary, it has 
     query API to provide more information about the columns names and types, even in the case of an empty
     result
   * Key autodetection is very weak. It only works if the column used for the partition is used in the query
-    in the format <pre>column=<value></pre> or <pre>column='<value>'</pre>. 
+    in the format <pre>column=yourColumn<value></pre> or <pre>column='yourColumn'</pre>
   * Not all methods are implemented. The driver only covers the most important functions, but is far to be
     complete. 
     
