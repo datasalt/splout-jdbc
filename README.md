@@ -45,7 +45,7 @@ Example of usage:
     Statement stmt = conn.createStatement();
     ResultSet rs = stmt.executeQuery("select * from city where country_code = 'AFG';");
     while(rs.next()){
-      for (int i=1; i<6; i++) {
+      for (int i=1; i&lt;6; i++) {
         System.out.print(rs.getObject(i) + "\t");
       }
       System.out.println();
