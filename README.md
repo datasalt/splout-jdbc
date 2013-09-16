@@ -33,7 +33,7 @@ The current implementation is very simple and not complete. Particulary, it has 
     query API to provide more information about the columns names and types, even in the case of an empty
     result
   * Key autodetection is very weak. It only works if the column used for the partition is used in the query
-    in the format column=<value> or column='<value>'. 
+    in the format <pre>column=<value></pre> or <pre>column='<value>'</pre>. 
   * Not all methods are implemented. The driver only covers the most important functions, but is far to be
     complete. 
     
